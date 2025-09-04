@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Unique identifier for this launch agent -->
+    <key>Label</key>
+    <string>com.caruso.btop</string>
+
+    <!-- Start automatically when the agent is loaded (i.e. at boot/login) -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- Keep the process alive – if it crashes launchd will restart it -->
+    <key>KeepAlive</key>
+    <true/>
+
+    <!-- Command to run – we call the wrapper we just created -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/caruso/scripts/run-btop.command</string>
+    </array>
+
+    <!-- Optional log files – very handy for debugging -->
+    <key>StandardOutPath</key>
+    <string>/tmp/btop-launch.out</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/btop-launch.err</string>
+</dict>
+</plist>
